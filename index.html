@@ -1,73 +1,428 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-
-    <link rel="shortcut icon" type="imagex/png" href="/assets/logoAba.ico">
-    <link rel="stylesheet" href="style.css">
+    <title>Rafael Leal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #191919 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #2DA952;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+                <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-green-800">Rafael<span class="text-green-500"> Leal</span></div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-green-600">Início</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-green-600">Sobre</a>
+                <a href="#experience" class="nav-link text-gray-700 hover:text-green-600">Experiência</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-green-600">Contato</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-green-600">Início</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-green-600">Sobre</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-green-600">Experiência</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600">Contato</a>
+        </div>
+    </header>
+    
 
-<body>
-    <section>
-        <div class="circle"></div>
-        <header>
-            <a href="#"> <img src="./assets/logo" alt="profile" class="logo"></a>
-            <img src="./assets/iconADS.png" class="html" alt="ADS">
-        </header>
-        <div class="content">
-            <div class="textBox">
-                <h2>
-                    Sobre mim!
-                </h2>
-                <p>
-📚 Atualmente estou cursando redes de computadores, e paralelamente estudo para futuramente tirar a certificação <b>CCNA</b> e <b>ITIL</b>.
-
-Trabalho na área de tecnologia desde 2016. Comecei pela área de infraestrutura física, trabalhando com cabeamento estruturado, cabeamento óptico e instalação de equipamentos.
-
-Tive a oportunidade de trabalhar com CFTV IP e PABX em nuvem, assim podendo ampliar meus conhecimentos na parte de configuração de equipamentos de segurança eletrônica e telefonia VoIP.
-
-Atualmente trabalho com suporte ao usuário alocado na empresa Scania, dando suporte na configuração de equipamentos em rede e manutenção de hardware.
-
-Com a junção das empresas que trabalhei e trabalho atualmente, adquiri uma grande responsabilidade e pensamento crítico e criativo para solucionar problemas de forma rápida e inteligente.
-                </p>
-                
-                <p>
-<i>"🌱 Plante troca de experiência para colher inovação!"</i>
-                </p>
-
-                <p>
-                    <span><b>Atenção:</b> Estou trabalhando na parte de responsividade para aparelhos mobile, desculpe pelo transtorno.</span>
-                </p>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-32 pb-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Olá! Me chamo <span class="text-green-500">Rafael</span></h1>
+                <p class="text-xl mb-8 font-italic text-white-100">Movido pela curiosidade e pelo desejo de construir um amanhã mais conectado.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">Contate-me</a>
+                    <a href="#experience" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">Meus Projetos</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="./img/logo.png" alt="Network Infrastructure" class="animate-float">
             </div>
         </div>
     </section>
-    <section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 ">
+            <h2 class="text-3xl font-bold text-center mb-16 text-green-600">Sobre Mim</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="./img/perfil.png" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Técnico em Infraestrutura de Redes</h3>
+                    <p class="text-gray-600 mb-6">Atualmente sou estagiário na área de administração de redes e estou em busca da minha primeira oportunidade na area de Cyber Segurança.
+                        Tenho experiência com Linux, Windows Server, Cisco, Azure e Active Directory, além de estar me aprofundando cada vez mais em Python para automação e integração de processos - um passo importante 
+                        na minha transição para o mundo DevOps.</p>                    
+                    <p class="text-gray-600 mb-6">Já conclui cursos como CCNAv7 (SENAI Roberto Mange), AZ-900, SC-900, ITIL v4 (KASolutions) e um curso de formação de líderes, que me ajudou a 
+                        desenvolver habilidades interpessoais e de trabalho em equipe.</p>
+                    <p class="text-gray-600 mb-6">Sou movido por desafios e aprendizado contínuo, e estou construindo um portfólio com projetos práticos, disponível aqui:<br>
+                        👉 <a href="https://github.com/rafaelfelip " class="hover:text-green-600" >github.com/rafaelfelip<a></p>   
+                    <p class="text-gray-600 mb-6">Se você procura alguém com base sólida em infraestrutura, mente voltada para automação e muita vontade de aprender e evoluir no time, vamos conversar!</p>    
+
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-server text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Redes Corporativas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-shield-alt text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Segurança</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-cloud text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Cloud Networking</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-wifi text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Wireless</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-</body>
-<footer>
-    <ul class="sci">
-        <li>
-            <a href=" https://www.instagram.com/rafaelfelip.dev/ " target=" _blank "> <img src="./assets/instagram.png"
-                    alt=""> </a>
-        </li>
-        <li>
-            <a href=" https://github.com/rafaelfelip " target=" _blank "> <img src="./assets/github.png" alt=""> </a>
-        </li>
-        <li>
-            <a href=" https://www.linkedin.com/in/rafaelfelip/ " target=" _blank "> <img src="./assets/linkedin.png"
-                    alt=""> </a>
-        </li>
-        <li>
-            <a href=" https://api.whatsapp.com/send?phone=5519974136613 " target=" _blank "> <img
-                    src="./assets/whatsapp.png" alt=""> </a>
-        </li>
-    </ul>
-    </ul>
-</footer>
 
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-green-800">Experiências em Campo</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Experience 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Analista de Suporte Pleno Stefanini Brasil</h3>
+                  <ul class="text-gray-600 mb-4 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Suporte a sistemas operacionais Windows e Linux</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Configuração de redes (IP, DNS, DHCP, VPN)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Análise e resolução de problemas técnicos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Atendimento ao usuário com boa comunicação</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Uso de ferramentas de acesso remoto e chamados (TeamViewer, GLPI, etc.)</span>
+                        </li>
+                    </ul>
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">2021-2025</span>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hospital text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Técnico em Redes TBComp</h3>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span> Montagem e manutença o de redes LAN/WAN</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Cabeamento estruturado (CAT5e, CAT6, fibra o ptica)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Conhecimento em protocolos TCP/IP, DNS, DHCP, NAT</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Identificaça o e resoluça o de falhas de rede</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>VLANs e roteamento estático/dinámico</span>
+                        </li>
+                    </ul>
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">2016-2017</span>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-university text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Estágio Unicamp</h3>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Arquitetura controller-based</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Autenticação 802.1X</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Balanceamento de carga inteligente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Balanceamento de carga inteligente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span>Balanceamento de carga inteligente</span>
+                        </li>
+                    </ul>
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">2025-ATUAL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-green-800">Entre em Contato</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-semibold mb-6">Informações para Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">orafaelfelip@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">+55 (19) 974136613</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Localização</h4>
+                                <p class="text-gray-600">Campinas, São Paulo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <h4 class="font-medium text-gray-800 mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/rafaelfelip/" class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center text-green-600 hover:bg-green-200 transition" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/rafaelfelip" class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center text-green-600 hover:bg-green-200 transition" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/orafaleal.exe/" class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center text-green-600 hover:bg-green-200 transition" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2">Assunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition w-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-Green-400 mb-2">Rafael<span class="text-green-300"> Leal</span></div>
+                    <p class="text-gray-400">Tecnico em infraestrutura de redes</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/rafaelfelip/" class="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/rafaelfelip" class="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/orafaleal.exe/" class="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Rafael Leal. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Enviar e-mail
+           (function() {
+      emailjs.init("ghQDeitZxNqpej4YZ"); // substitua pelo seu user_id
+    })();
+
+    function enviarEmail(e) {
+      e.preventDefault();
+
+      const params = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        assunto: document.getElementById("assunto").value,
+        mensagem: document.getElementById("mensagem").value
+      };
+
+      emailjs.send("service_zg94exa", "template_6te66cr", params)
+        .then(function(response) {
+          alert("Mensagem enviada com sucesso!");
+        }, function(error) {
+          alert("Erro ao enviar mensagem: " + JSON.stringify(error));
+        });
+    }
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        //Dark Mode
+        const body = document.body;
+        const darkModeKey = 'darkMode';
+
+        function toggleDarkMode() {
+                body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem(darkModeKey, isDarkMode);
+            }
+
+        function applyStoredTheme() {
+            const storedTheme = localStorage.getItem(darkModeKey);
+            if (storedTheme === 'true') {
+                body.classList.add('dark-mode');
+                }
+            }
+
+// Aplica o tema armazenado ao carregar a página
+applyStoredTheme();        
+    </script>
+    
+</body>
 </html>
